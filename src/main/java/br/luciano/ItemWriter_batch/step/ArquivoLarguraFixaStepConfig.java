@@ -12,17 +12,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
-public class LeituraArquivoLarguraFixaStepConfig {
+public class ArquivoLarguraFixaStepConfig {
 	@Autowired
 	private PlatformTransactionManager transactionManager;
 
 	@Bean
-	public Step leituraArquivoLarguraFixaStep(ItemReader<Cliente> leituraArquivoLarguraFixaReader,
-			ItemWriter<Cliente> leituraArquivoLarguraFixaWriter, JobRepository jobRepository) {
-		return new StepBuilder("leituraArquivoLarguraFixaStep", jobRepository)
+	public Step arquivoLarguraFixaStep(ItemReader<Cliente> leituraArquivoLarguraFixaReader,
+									   ItemWriter<Cliente> arquivoLarguraFixaWriter, JobRepository jobRepository) {
+		return new StepBuilder("arquivoLarguraFixaStep", jobRepository)
 				.<Cliente, Cliente>chunk(1, transactionManager)
 				.reader(leituraArquivoLarguraFixaReader)
-				.writer(leituraArquivoLarguraFixaWriter)
+				.writer(arquivoLarguraFixaWriter)
 				.build();
 	}
 }

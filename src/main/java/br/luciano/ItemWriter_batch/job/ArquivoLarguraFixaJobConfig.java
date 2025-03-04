@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Configuration;
 public class ArquivoLarguraFixaJobConfig {
 
 	@Bean
-	public Job arquivoLarguraFixaJob(Step leituraArquivoLarguraFixaStep, JobRepository jobRepository) {
+	public Job arquivoLarguraFixaJob(Step arquivoLarguraFixaStep, JobRepository jobRepository) {
 		return new JobBuilder("arquivoLarguraFixaJob", jobRepository)
-				.start(leituraArquivoLarguraFixaStep)
+				.start(arquivoLarguraFixaStep)
 				.incrementer(new RunIdIncrementer())
 				.build();
 	}

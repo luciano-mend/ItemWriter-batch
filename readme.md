@@ -9,10 +9,12 @@ As variáveis de ambiente:
 DB_USER=nome_banco_dados
 DB_PASSWORD=senha_banco_dados
 ```
-O argumento do local do arquivo:
+Os argumentos dos locais dos arquivos de leitura e escrita:
 ```bash
 arquivoClientes=file:files/clientes.txt
+arquivoSaida=file:files/clientesSaida.txt
 ```
 
 #### Implementações
 O projeto contém a utilização de tipos de ItemWriter.
+- FlatFileItemWriter
