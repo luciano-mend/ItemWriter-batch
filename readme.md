@@ -3,6 +3,7 @@
 ### Para executar é necessário ter:
 - Banco PostgreSQL com 2 databases: spring_batch e app
 - Java 17
+- Resources/scripts.sql aplicado no banco app
 
 As variáveis de ambiente:
 ```bash
@@ -20,12 +21,16 @@ arquivoSaida=file:files/clientesSaidaDelimitado.txt
 
 #MultiResourceItemReader
 arquivosLancamento=file:files/lancamento*
+
+#lineAggregator
+arquivoSaida=file:files/demonstrativoSaida.txt
 ```
 
 #### Implementações
 O projeto contém a utilização de tipos de ItemWriter.
 - FlatFileItemWriter
 - FlatFileItemWriter com delimited
+- FlatFileItemWriter com lineAggregator
 
 #### Utilizado também:
 - MultiResourceItemReader
