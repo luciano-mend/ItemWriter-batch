@@ -13,8 +13,13 @@ Os argumentos dos locais dos arquivos de leitura e escrita:
 ```bash
 arquivoClientes=file:files/clientes.txt
 arquivoSaida=file:files/clientesSaida.txt
+
+#delimited
+arquivoClientes=file:files/clientesDelimitado.txt
+arquivoSaida=file:files/clientesSaidaDelimitado.txt
 ```
 
 #### Implementações
 O projeto contém a utilização de tipos de ItemWriter.
 - FlatFileItemWriter
+- FlatFileItemWriter com delimited
