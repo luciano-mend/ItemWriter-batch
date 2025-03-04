@@ -1,5 +1,5 @@
-SISTEMA INTEGRADO: XPTO 				 DATA: 04/03/2025
-MÓDULO: ORÇAMENTO 						 HORA: 19:03
+SISTEMA INTEGRADO: XYZ  				 DATA: 04/03/2025
+MÓDULO: ORÇAMENTO 						 HORA: 20:03
 			DEMONSTRATIVO ORCAMENTARIO
 ----------------------------------------------------------------------------
 CODIGO NOME VALOR
@@ -31,5 +31,5 @@ CODIGO NOME VALOR
 	 [01/05/2020] Viagem para Las Vegas - R$ 32.000,00
 
 
-							  Total: R$ 0,00
+							  Total: R$ 63.000,00
 							  Código de Autenticação: fkyew6868fewjfhjjewf

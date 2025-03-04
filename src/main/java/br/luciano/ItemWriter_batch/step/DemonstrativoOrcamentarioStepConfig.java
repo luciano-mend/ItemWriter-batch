@@ -2,6 +2,7 @@ package br.luciano.ItemWriter_batch.step;
 
 import br.luciano.ItemWriter_batch.dominio.GrupoLancamento;
 import br.luciano.ItemWriter_batch.reader.GrupoLancamentoReader;
+import br.luciano.ItemWriter_batch.writer.DemonstrativoOrcamentarioRodape;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
@@ -20,17 +21,16 @@ public class DemonstrativoOrcamentarioStepConfig {
 
     @Bean
     public Step demonstrativoOrcamentarioStep(
-            // Esse aqui lê dos arquivos
-//            @Qualifier("demonstrativoOrcamentarioReader") MultiResourceItemReader<GrupoLancamento> demonstrativoOrcamentarioReader,
-            // Esse aqui lê do banco de dados
             GrupoLancamentoReader demonstrativoOrcamentarioReader,
             @Qualifier("demonstrativoOrcamentarioWriter") ItemWriter<GrupoLancamento> demonstrativoOrcamentarioWriter,
+            DemonstrativoOrcamentarioRodape rodapeCallback,
             JobRepository jobRepository) {
 
         return new StepBuilder("demonstrativoOrcamentarioStep", jobRepository)
                 .<GrupoLancamento,GrupoLancamento>chunk(100, transactionManager)
                 .reader(demonstrativoOrcamentarioReader)
                 .writer(demonstrativoOrcamentarioWriter)
+                .listener(rodapeCallback)
                 .build();
     }
 }

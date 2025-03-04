@@ -41,7 +41,7 @@ public class DemonstrativoOrcamentarioWriterConfig {
         return new FlatFileHeaderCallback() {
             @Override
             public void writeHeader(Writer writer) throws IOException {
-                writer.append(String.format("SISTEMA INTEGRADO: XPTO \t\t\t\t DATA: %s%n", new SimpleDateFormat("dd/MM/yyyy").format(new Date())));
+                writer.append(String.format("SISTEMA INTEGRADO: XYZ  \t\t\t\t DATA: %s%n", new SimpleDateFormat("dd/MM/yyyy").format(new Date())));
                 writer.append(String.format("MÓDULO: ORÇAMENTO \t\t\t\t\t\t HORA: %s%n", new SimpleDateFormat("HH:MM").format(new Date())));
                 writer.append(String.format("\t\t\tDEMONSTRATIVO ORCAMENTARIO%n"));
                 writer.append(String.format("----------------------------------------------------------------------------%n"));
