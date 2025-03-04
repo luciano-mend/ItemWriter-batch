@@ -15,9 +15,9 @@ import org.springframework.stereotype.Component;
 public class GrupoLancamentoReader implements ItemStreamReader<GrupoLancamento>, ResourceAwareItemReaderItemStream<GrupoLancamento> {
     @Autowired
     // Esse aqui lê do arquivo
-    private FlatFileItemReader<GrupoLancamento> delegate;
+//    private FlatFileItemReader<GrupoLancamento> delegate;
     // Esse aqui lê do banco
-//    private JdbcCursorItemReader<GrupoLancamento> delegate;
+    private JdbcCursorItemReader<GrupoLancamento> delegate;
     private GrupoLancamento lancamentoAtual;
 
     @Override
@@ -38,7 +38,7 @@ public class GrupoLancamentoReader implements ItemStreamReader<GrupoLancamento>,
     @Override
     public void setResource(Resource resource) {
         // Descomentar para a leitura de arquivo
-        delegate.setResource(resource);
+//        delegate.setResource(resource);
     }
 
     @Override

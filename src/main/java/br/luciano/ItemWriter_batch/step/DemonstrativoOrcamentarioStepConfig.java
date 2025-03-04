@@ -21,9 +21,9 @@ public class DemonstrativoOrcamentarioStepConfig {
     @Bean
     public Step demonstrativoOrcamentarioStep(
             // Esse aqui lê dos arquivos
-            @Qualifier("demonstrativoOrcamentarioReader") MultiResourceItemReader<GrupoLancamento> demonstrativoOrcamentarioReader,
+//            @Qualifier("demonstrativoOrcamentarioReader") MultiResourceItemReader<GrupoLancamento> demonstrativoOrcamentarioReader,
             // Esse aqui lê do banco de dados
-//            GrupoLancamentoReader demonstrativoOrcamentarioReader,
+            GrupoLancamentoReader demonstrativoOrcamentarioReader,
             @Qualifier("demonstrativoOrcamentarioWriter") ItemWriter<GrupoLancamento> demonstrativoOrcamentarioWriter,
             JobRepository jobRepository) {
 
