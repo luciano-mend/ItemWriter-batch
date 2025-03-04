@@ -1,4 +1,5 @@
 ## Projeto utilizando Spring Batch
+O projeto lê os dados (arquivo ou banco) e escreve um arquivo de saída, sendo ele formatado, delimitado, customizado ou customizado com cabeçalho e rodapé.
 
 ### Para executar é necessário ter:
 - Banco PostgreSQL com 2 databases: spring_batch e app
@@ -31,6 +32,7 @@ O projeto contém a utilização de tipos de ItemWriter.
 - FlatFileItemWriter
 - FlatFileItemWriter com delimited
 - FlatFileItemWriter com lineAggregator
+- FlatFileItemWriter com headerCallback, footerCallback e BeforeWrite
 
 #### Utilizado também:
 - MultiResourceItemReader
