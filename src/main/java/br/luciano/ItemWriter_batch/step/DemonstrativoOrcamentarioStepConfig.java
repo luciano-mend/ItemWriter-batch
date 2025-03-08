@@ -8,6 +8,7 @@ import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.MultiResourceItemReader;
+import org.springframework.batch.item.file.MultiResourceItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -22,12 +23,12 @@ public class DemonstrativoOrcamentarioStepConfig {
     @Bean
     public Step demonstrativoOrcamentarioStep(
             GrupoLancamentoReader demonstrativoOrcamentarioReader,
-            @Qualifier("demonstrativoOrcamentarioWriter") ItemWriter<GrupoLancamento> demonstrativoOrcamentarioWriter,
+            MultiResourceItemWriter<GrupoLancamento> demonstrativoOrcamentarioWriter,
             DemonstrativoOrcamentarioRodape rodapeCallback,
             JobRepository jobRepository) {
 
         return new StepBuilder("demonstrativoOrcamentarioStep", jobRepository)
-                .<GrupoLancamento,GrupoLancamento>chunk(100, transactionManager)
+                .<GrupoLancamento,GrupoLancamento>chunk(1, transactionManager)
                 .reader(demonstrativoOrcamentarioReader)
                 .writer(demonstrativoOrcamentarioWriter)
                 .listener(rodapeCallback)

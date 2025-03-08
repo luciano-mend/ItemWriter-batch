@@ -1,7 +1,9 @@
 package br.luciano.ItemWriter_batch.writer;
 
 import br.luciano.ItemWriter_batch.dominio.GrupoLancamento;
+import org.springframework.batch.core.annotation.AfterChunk;
 import org.springframework.batch.core.annotation.BeforeWrite;
+import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.file.FlatFileFooterCallback;
 import org.springframework.stereotype.Component;
@@ -26,5 +28,10 @@ public class DemonstrativoOrcamentarioRodape implements FlatFileFooterCallback {
         for (GrupoLancamento grupo : grupos) {
             totalGeral += grupo.getTotal();
         }
+    }
+
+    @AfterChunk
+    public void afterChunk(ChunkContext context) {
+        totalGeral = 0.0;
     }
 }
